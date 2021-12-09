@@ -1,0 +1,14 @@
+body {
+  font-family: $font-base;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text;
+  font-family: $font-base !important;
+}
+
+button {
+  border: 1px solid black;
+  color: $color-text;
+}

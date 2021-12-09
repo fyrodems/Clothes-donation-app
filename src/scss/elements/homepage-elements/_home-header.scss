@@ -1,0 +1,43 @@
+.homeheader {
+  position: relative;
+  margin-right: 150px;
+  display: flex;
+  justify-content: flex-end;
+  height: 534px;
+
+  .homeheader__img{
+    max-width: 900px;
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    left: -270px;
+  }
+
+  .homeheader__content {
+    display:flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    gap: 30px;
+    margin-top: 150px;
+  }
+
+  .content__title {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 3rem;
+    font-weight: 300;
+  }
+
+  .homeheader__btns {
+    button {
+      background: #fff;
+      padding: 10px 15px;
+      font-size: 1.3rem;
+      font-weight: 250;
+      text-align: center;
+      width: 200px;
+      margin: 10px;
+    }
+  }
+}

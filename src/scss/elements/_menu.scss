@@ -1,0 +1,50 @@
+@use "sass:color";
+
+.header__container {
+  background-color: #fff;
+  margin-top: 20px;
+  .header__container-small {
+    width: 1220px;
+    margin: 0 auto;
+  }
+
+  .header__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav__list1,
+  .nav__list2 {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+  }
+
+  .nav__list1 * {
+    color: $color-text-light;
+    font-size: 0.875rem;
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  .nav__list2 * {
+    font-size: 1rem;
+  }
+
+  .list__element:hover {
+    border: 1px solid black;
+    padding: 5px 15px;
+    background: #fff;
+  }
+
+  .list__element-yellow {
+    border: 1px solid $color-yellow;
+    padding: 5px 15px;
+    &:hover {
+      background: lighten($color-yellow, 35%);;
+    }
+  }
+
+}
