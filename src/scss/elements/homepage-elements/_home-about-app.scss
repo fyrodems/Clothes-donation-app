@@ -1,0 +1,45 @@
+#about-app {
+  padding: 50px 0;
+}
+
+.about-app {
+  background-color: $color-bg-light;
+  width: 100vw;
+  .about-app__container {
+    width: 900px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .about-app__content {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 50px 30px;
+    row-gap: 20px;
+    column-gap: 100px;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      display: inline-block;
+      height: 23px;
+    }
+      span:before {
+        display: block;
+        content: "";
+        height: 1px;
+        width: 65px;
+        background-color: #707070;
+        margin: 0 auto 15px auto;
+    }
+  }
+}
+
+#about-app .button__container {
+  display: grid;
+  place-items: center;
+  .button {
+    margin-top: 30px;
+  }
+}

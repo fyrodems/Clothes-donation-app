@@ -15,7 +15,7 @@ export default function BasicMenu() {
                             {/*<MenuItem className="list__element"><Link to="/wylogowano">Logout</Link> </MenuItem>*/}
                         </ul>
                         <ul className="nav__list2">
-                            <MenuItem className="list__element"><Link to="/oddaj-rzeczy">Start</Link> </MenuItem>
+                            <MenuItem className="list__element"><Link to="/">Start</Link> </MenuItem>
                             <MenuItem className="list__element"><Link to="/oddaj-rzeczy">O co chodzi?</Link> </MenuItem>
                             <MenuItem className="list__element"><Link to="/oddaj-rzeczy">O nas</Link> </MenuItem>
                             <MenuItem className="list__element"><Link to="/oddaj-rzeczy">Fundacja i organizacje</Link> </MenuItem>
