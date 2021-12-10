@@ -20,7 +20,7 @@ export default function BasicMenu() {
                             <MenuItem className="list__element"><ScrollLink path="about-app" text="O co chodzi?"></ScrollLink></MenuItem>
                             <MenuItem className="list__element"><ScrollLink path="about-us" text="O nas"></ScrollLink></MenuItem>
                             <MenuItem className="list__element"><ScrollLink path="" text="Fundacja i organizacje"></ScrollLink></MenuItem>
-                            <MenuItem className="list__element"><ScrollLink path="" text="Kontakt"></ScrollLink></MenuItem>
+                            <MenuItem className="list__element"><ScrollLink path="contact" text="Kontakt"></ScrollLink></MenuItem>
                         </ul>
                     </nav>
                 </div>
