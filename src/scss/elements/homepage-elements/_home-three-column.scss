@@ -1,0 +1,31 @@
+.home-three-columns {
+  background-image: url("../../../assets/3 Columns Background.png");
+  background-size: cover;
+
+
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    text-align: center;
+    width: 320px;
+    font-weight: 300;
+    margin: 50px 0 70px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .column__number{
+      font-size: 3.5rem;
+    }
+    .column__title {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+  }
+
+
+}
