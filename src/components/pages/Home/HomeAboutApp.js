@@ -15,23 +15,23 @@ const HomeAboutApp = () => {
 
             <div className="about-app__container">
                 <div className="about-app__content">
-                    <img src={shirt} alt="Shirt"/>
+                    <img src={shirt} alt="Shirt icon"/>
                     <h3>Wybierz rzeczy</h3>
                     <span>ubrania, zabawki, sprzęt i inne</span>
                 </div>
                 <div className="about-app__content">
-                    <img src={bag} alt="Bag"/>
+                    <img src={bag} alt="Bag icon"/>
                     <h3>Spakuj je</h3>
                     <span>skorzystaj z worków na śmieci</span>
                 </div>
                 <div className="about-app__content">
-                    <img src={magnifier} alt="Magnifier"/>
+                    <img src={magnifier} alt="Magnifier icon"/>
                     <h3>Zdecyduj komu <br/>
                         chcesz pomóc</h3>
                     <span>wybierz zaufane miejsce</span>
                 </div>
                 <div className="about-app__content">
-                    <img src={reload} alt="Reload"/>
+                    <img src={reload} alt="Reload icon"/>
                     <h3>Zamów kuriera</h3>
                     <span>kurier przyjedzie w dogodnym terminie</span>
                 </div>

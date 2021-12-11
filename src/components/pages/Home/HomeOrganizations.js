@@ -1,10 +1,14 @@
 import React from 'react';
+import Title from "../../common/Title";
 
 const HomeOrganizations = () => {
     return (
-        <div>
-            
-        </div>
+        <section id="organizations" className="organizations">
+            <Title title="Komu pomagamy?"/>
+            <div className="organizations__btns">
+
+            </div>
+        </section>
     );
 };
 
