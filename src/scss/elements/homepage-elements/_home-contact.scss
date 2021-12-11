@@ -5,13 +5,80 @@
                           rgba(255, 255, 255, 0.7)
           ),
           url("../../../assets/Background-Contact-Form.jpg");
+  width: 100vw;
+  background-size: cover;
 }
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 1220px;
+  margin: 0 auto;
+  padding: 130px 0 150px 0;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 30px;
+  }
+
+  input,
+  textarea {
+    border: none;
+    border-bottom: 2px solid black;
+    font-family: $font-base;
+    font-size: 0.9rem;
+    font-weight: 300;
+    &::placeholder {
+      color: #3C3C3C26;
+      font-family: $font-base;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+  }
+
+  textarea, input {
+    resize: none;
+    background: none;
+    padding-bottom: 7px;
+  }
+
+  .inputs__container,
+  .textarea__container,
+  .form__field {
+    display: flex;
+    gap: 10px;
+  }
+
+  .inputs__container {
+    justify-content: space-between;
+  }
+
+  .form__field {
+    flex-direction: column;
+    width: 45%;
+  }
+
+  .textarea__container {
+    flex-direction: column;
+  }
+
+  button {
+    width: 30%;
+    align-self: flex-end;
+    background: none;
+  }
+}
+
 
 .contact__footer {
   width: 1220px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
   small {
     font-size: 0.85rem;
   }
