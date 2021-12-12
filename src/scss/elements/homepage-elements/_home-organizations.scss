@@ -1,5 +1,20 @@
 .organizations {
 
+  .organizations__btns {
+    display: flex;
+    justify-content: center;
+
+    .button {
+      border: none;
+      width: 200px;
+      &:focus {
+        border: 1px solid black;
+        padding: 9px 29px;
+      }
+    }
+  }
+
+
 
 
 
