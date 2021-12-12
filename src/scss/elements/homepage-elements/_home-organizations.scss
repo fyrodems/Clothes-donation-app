@@ -1,4 +1,10 @@
 .organizations {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 0;
 
   .organizations__btns {
     display: flex;
@@ -13,6 +19,48 @@
       }
     }
   }
+
+  .organizations__content {
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
+
+  .list__element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-text;
+    padding: 20px 0;
+    border-bottom: 1px solid $color-text;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .element__field {
+    display: flex;
+    flex-direction: column;
+  }
+  .element__field span:nth-child(1) {
+    font-size: 1.2rem;
+  }
+  .element__field span:nth-child(2), {
+    font-size: 0.8rem;
+  }
+  div:nth-child(2) > span {
+    font-size: 0.8rem;
+  }
+
+  span {
+    margin: 7px;
+  }
+
+
+
 
 
 
