@@ -71,3 +71,25 @@
     margin: 7px;
   }
 }
+
+//styles for pagination
+
+.pagination__container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+
+  li:first-child,
+  li:last-child {
+    display: none;
+  }
+  li a {
+      padding: 10px;
+      cursor: pointer;
+  }
+
+  .pagination__active a {
+      border: 1px solid black;
+  }
+}

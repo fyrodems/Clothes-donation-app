@@ -1,9 +1,7 @@
-import Box from "@mui/material/Box";
 import React, {useState} from "react";
 import ReactPaginate from "react-paginate";
 
-const TabPanel = (props) => {
-    const { array, description, children, value, index, ...other } = props;
+const TabPanel = ({ array, description, value, index }) => {
 
     const [pageNumber, setPageNumber] = useState(0);
     const elementsPerPage = 3;
@@ -30,15 +28,9 @@ const TabPanel = (props) => {
     }
 
     return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
+        <>
             {value === index && (
-                <Box>
+                <>
                     <p className="organizations__content">{description}</p>
                     <ul>
                         {displayElements(array)}
@@ -52,10 +44,9 @@ const TabPanel = (props) => {
                             activeClassName={"pagination__active"}
                         />
                             : null}
-
-                </Box>
+                </>
             )}
-        </div>
+        </>
     );
 }
 

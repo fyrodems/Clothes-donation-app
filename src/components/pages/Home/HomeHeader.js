@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const HomeHeader = () => {
     return (
         <section className="homeheader">
-            <img className="homeheader__img" src={headerImg} alt="Home hero image"/>
+            <img className="homeheader__img" src={headerImg} alt="Home hero"/>
             <div className="homeheader__content">
                 <h1 className="content__title">Zacznij pomagać! <br/> Oddaj niechciane rzeczy w zaufane ręce</h1>
                 <img className="decoration" src={decoration} alt="title decoration"/>
