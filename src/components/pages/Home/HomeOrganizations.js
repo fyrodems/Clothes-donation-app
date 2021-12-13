@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import ReactPaginate from "react-paginate";
 import Title from "../../common/Title";
 import {foundations} from "../../../data/organizations and foundations";
 import {organizations} from "../../../data/organizations and foundations";
@@ -42,10 +43,38 @@ const a11yProps = (index) => {
 }
 
 const HomeOrganizations = () => {
+
+    //logic for tabs
     const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    //logic for pagination
+    const [pageNumber, setPageNumber] = useState(0);
+    const elementsPerPage = 3;
+    const seenElements = pageNumber * elementsPerPage;
+
+    const displayElements = (array) => {
+        const slicedArray = array.slice(seenElements, seenElements + elementsPerPage).map((elem, index) => {
+            return (
+                <li className="list__element" key={index}>
+                <div className="element__field">
+                    <span>{elem.name}</span>
+                    <span>{elem.aim}</span>
+                </div>
+                <div>
+                    <span>{elem.donation}</span>
+                </div>
+            </li>
+            )})
+        return slicedArray;
+    }
+
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    }
+
     return (
         <section className="organizations" id="organizations">
             <Title title="Komu pomogamy?"/>
@@ -63,18 +92,15 @@ const HomeOrganizations = () => {
                         Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
                     </p>
                     <ul>
-                        {foundations.map((elem, index) => {
-                            return <li className="list__element" key={index}>
-                                <div className="element__field">
-                                    <span>{elem.name}</span>
-                                    <span>{elem.aim}</span>
-                                </div>
-                                <div>
-                                    <span>{elem.donation}</span>
-                                </div>
-                            </li>
-                        })}
+                        {displayElements(foundations)}
                     </ul>
+                    <ReactPaginate
+                        pageCount={Math.ceil(foundations.length / elementsPerPage)}
+                        onPageChange={changePage}
+                        containerClassName={"pagnation__container"}
+                        disabledClassName={"pagination__disabled"}
+                        activeClassName={"pagination__active"}
+                    />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <p className="organizations__content">
@@ -83,17 +109,7 @@ const HomeOrganizations = () => {
                         quis nostrud.
                     </p>
                     <ul>
-                        {organizations.map((elem, index) => {
-                            return <li className="list__element" key={index}>
-                                <div className="element__field">
-                                    <span>{elem.name}</span>
-                                    <span>{elem.aim}</span>
-                                </div>
-                                <div>
-                                    <span>{elem.donation}</span>
-                                </div>
-                            </li>
-                        })}
+                        {displayElements(organizations)}
                     </ul>
                 </TabPanel>
                 <TabPanel value={value} index={2}>
@@ -102,17 +118,7 @@ const HomeOrganizations = () => {
                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
                     </p>
                     <ul>
-                        {foundraising.map((elem, index) => {
-                            return <li className="list__element" key={index}>
-                                <div className="element__field">
-                                    <span>{elem.name}</span>
-                                    <span>{elem.aim}</span>
-                                </div>
-                                <div>
-                                    <span>{elem.donation}</span>
-                                </div>
-                            </li>
-                        })}
+                        {displayElements(foundraising)}
                     </ul>
                 </TabPanel>
             </Box>
