@@ -3,7 +3,6 @@ import headerImg from "../../../assets/Home-Hero-Image.jpg"
 import decoration from "../../../assets/Decoration.svg"
 import {Link} from "react-router-dom";
 
-
 const HomeHeader = () => {
     return (
         <section className="homeheader">
