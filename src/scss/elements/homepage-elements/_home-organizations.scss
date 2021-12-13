@@ -8,15 +8,24 @@
 
   .organizations__btns {
     display: flex;
-    justify-content: center;
-
+    padding: 20px;
     .button {
       border: none;
       width: 200px;
-      &:focus {
-        border: 1px solid black;
-        padding: 9px 29px;
-      }
+      padding: 10px 30px;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    .css-heg063-MuiTabs-flexContainer {
+      justify-content: center;
+    }
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+      color: $color-text;
+      border: 1px solid black;
+      padding: 9px 29px;
+    }
+    .css-1aquho2-MuiTabs-indicator {
+      display: none;
     }
   }
 
@@ -24,7 +33,6 @@
     width: 470px;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.1rem;
     line-height: 1.6rem;
     font-weight: 400;
   }
