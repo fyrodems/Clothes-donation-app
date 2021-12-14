@@ -6,7 +6,9 @@
   place-items: center;
 
   .login__success {
-    padding: 30px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
   }
 
   .login__container {
@@ -15,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     .login__field {
       width: 320px;
       background: $color-bg-light;
@@ -42,8 +44,8 @@
       }
 
       .login__error {
-        font-weight: 400;
-        font-size: 0.8rem;
+        font-weight: 600;
+        font-size: 0.7rem;
         color: red;
       }
     }
