@@ -3,6 +3,7 @@
 .header__container {
   background-color: #fff;
   margin-top: 20px;
+
   .header__container-small {
     width: 1220px;
     margin: 0 auto;
@@ -24,6 +25,7 @@
   .nav__list1 * {
     color: $color-text-light;
     font-size: 0.875rem;
+
     &:hover {
       background: #fff;
     }
@@ -42,6 +44,7 @@
   .list__element-yellow {
     border: 1px solid $color-yellow;
     padding: 5px 15px;
+
     &:hover {
       background: lighten($color-yellow, 35%);
     }

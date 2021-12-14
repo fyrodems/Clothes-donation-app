@@ -1,10 +1,9 @@
 .contact {
-  background:
-          linear-gradient(
-                          rgba(255, 255, 255, 0.7),
-                          rgba(255, 255, 255, 0.7)
-          ),
-          url("../../../assets/Background-Contact-Form.jpg");
+  background: linear-gradient(
+                  rgba(255, 255, 255, 0.7),
+                  rgba(255, 255, 255, 0.7)
+  ),
+  url("../../../assets/Background-Contact-Form.jpg");
   width: 100vw;
   background-size: cover;
 }
@@ -31,6 +30,7 @@
     font-family: $font-base;
     font-size: 0.9rem;
     font-weight: 300;
+
     &::placeholder {
       color: #3C3C3C26;
       font-family: $font-base;
@@ -89,12 +89,15 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+
   small {
     font-size: 0.85rem;
   }
+
   .footer__social {
     display: flex;
     gap: 10px;
+
     * {
       width: 20px;
     }

@@ -9,6 +9,7 @@
   .organizations__btns {
     display: flex;
     padding: 20px;
+
     .button {
       border: none;
       width: 200px;
@@ -17,14 +18,17 @@
       font-weight: 400;
       text-transform: none;
     }
+
     .css-heg063-MuiTabs-flexContainer {
       justify-content: center;
     }
+
     .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
       color: $color-text;
       border: 1px solid black;
       padding: 9px 29px;
     }
+
     .css-1aquho2-MuiTabs-indicator {
       display: none;
     }
@@ -45,6 +49,7 @@
     color: $color-text;
     padding: 20px 0;
     border-bottom: 1px solid $color-text;
+
     &:last-child {
       border: none;
     }
@@ -84,12 +89,13 @@
   li:last-child {
     display: none;
   }
+
   li a {
-      padding: 10px;
-      cursor: pointer;
+    padding: 10px;
+    cursor: pointer;
   }
 
   .pagination__active a {
-      border: 1px solid black;
+    border: 1px solid black;
   }
 }
