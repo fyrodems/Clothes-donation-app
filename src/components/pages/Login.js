@@ -31,8 +31,8 @@ const Login = () => {
                    document.querySelectorAll("input")[0].classList.add("error");
                    document.querySelectorAll("input")[1].classList.remove("error");
                } else {
-                   document.querySelectorAll("input")[1].classList.add("error");
                    document.querySelectorAll("input")[0].classList.remove("error");
+                   document.querySelectorAll("input")[1].classList.add("error");
                }
         }
         else if (Object.keys(formErrors).length === 2) {
@@ -63,7 +63,7 @@ const Login = () => {
         <section className="login">
             <Title title="Zaloguj się"/>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <div className="login__message login__success">Jesteś zalogowany jako {formValues.email}</div>
+                <div className="login__success">Jesteś zalogowany jako {formValues.email}</div>
             ) : null}
 
             <form className="login__container" onSubmit={handleSubmit}>
