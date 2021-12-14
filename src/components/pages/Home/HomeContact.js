@@ -67,14 +67,34 @@ const HomeContact = () => {
     }
     if (!values.message) {
       errors.message = "Wpisz swoją wiadomość";
-    } else if (values.message.length < 12) {
+    } else if (values.message.length < 120) {
       errors.message = "Twoja wiadomość jest za krótka!";
     }
     return errors;
   };
 
+  fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
+    method: "POST",
+    body: JSON.stringify({
+      name: formValues.name,
+      email: formValues.email,
+      message: formValues.message,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return (
     <section id="contact" className="contact">
+      {JSON.stringify(formValues)}
       <div className="contact__form">
         <form onSubmit={handleSubmit}>
           <Title title="Skontaktuj się z nami" />
@@ -134,3 +154,5 @@ const HomeContact = () => {
 };
 
 export default HomeContact;
+
+// mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
