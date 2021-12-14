@@ -22,25 +22,16 @@ const Login = () => {
     };
 
     useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            document.querySelectorAll("input").forEach((elem) => {
-                elem.classList.remove("error");
-            })
-        } else if (Object.keys(formErrors).length === 1) {
-               if(Object.keys(formErrors)[0] === "email") {
-                   document.querySelectorAll("input")[0].classList.add("error");
-                   document.querySelectorAll("input")[1].classList.remove("error");
-               } else {
-                   document.querySelectorAll("input")[0].classList.remove("error");
-                   document.querySelectorAll("input")[1].classList.add("error");
-               }
+        if (formErrors.email) {
+            document.querySelector(".error1").previousElementSibling.classList.add("error")
+        } else if (!formErrors.email) {
+            document.querySelector(".error1").previousElementSibling.classList.remove("error")
         }
-        else if (Object.keys(formErrors).length === 2) {
-            document.querySelectorAll("input").forEach((elem) => {
-                elem.classList.add("error");
-            })
-        }
-    }, [formErrors, isSubmit]);
+        if (formErrors.password) {
+            document.querySelector(".error2").previousElementSibling.classList.add("error")
+        } else if (!formErrors.password) {
+            document.querySelector(".error2").previousElementSibling.classList.remove("error")
+        }}, [formErrors, isSubmit]);
 
     const validate = (values) => {
         const errors = {};
@@ -70,10 +61,10 @@ const Login = () => {
                 <div className="login__field">
                     <label htmlFor="email">Email</label>
                     <input name="email" className="login__input" type="text" value={formValues.email} onChange={handleChange} />
-                    <span className="login__error">{formErrors.email}</span>
+                    <span className="login__error error1">{formErrors.email}</span>
                     <label htmlFor="password">Hasło</label>
                     <input name="password" className="login__input" type="password" value={formValues.password} onChange={handleChange} />
-                    <span className="login__error">{formErrors.password}</span>
+                    <span className="login__error error2">{formErrors.password}</span>
                 </div>
                 <div className="login__btns">
                     <Link to="/rejestracja" className="login__btn">Załóż konto</Link>
