@@ -24,7 +24,24 @@ const Login = () => {
     useEffect(() => {
         console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
+            document.querySelectorAll("input").forEach((elem) => {
+                elem.classList.remove("error");
+            })
+        }
+            else if (Object.keys(formErrors).length === 1) {
+                // console.log(Object.keys(formErrors)[0])
+           if(Object.keys(formErrors)[0] == "email") {
+               document.querySelectorAll("input")[0].classList.add("error");
+               document.querySelectorAll("input")[1].classList.remove("error");
+           } else {
+               document.querySelectorAll("input")[1].classList.add("error");
+               document.querySelectorAll("input")[0].classList.remove("error");
+           }
+        }
+        else if (Object.keys(formErrors).length === 2) {
+            document.querySelectorAll("input").forEach((elem) => {
+                elem.classList.add("error");
+            })
         }
     }, [formErrors]);
     const validate = (values) => {

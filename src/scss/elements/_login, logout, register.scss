@@ -32,6 +32,16 @@
         border: none;
         border-bottom: 1px solid $color-text;
       }
+
+      .error {
+        border-bottom: 1px solid red;
+      }
+
+      .login__error {
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: red;
+      }
     }
   }
 
