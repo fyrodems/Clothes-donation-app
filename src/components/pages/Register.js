@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "../common/Title";
 
@@ -18,36 +18,6 @@ const Register = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
   };
-
-  useEffect(() => {
-    if (formErrors.email) {
-      document
-        .querySelector(".error1")
-        .previousElementSibling.classList.add("error");
-    } else if (!formErrors.email) {
-      document
-        .querySelector(".error1")
-        .previousElementSibling.classList.remove("error");
-    }
-    if (formErrors.password) {
-      document
-        .querySelector(".error2")
-        .previousElementSibling.classList.add("error");
-    } else if (!formErrors.password) {
-      document
-        .querySelector(".error2")
-        .previousElementSibling.classList.remove("error");
-    }
-    if (formErrors.password2) {
-      document
-        .querySelector(".error3")
-        .previousElementSibling.classList.add("error");
-    } else if (!formErrors.password2) {
-      document
-        .querySelector(".error3")
-        .previousElementSibling.classList.remove("error");
-    }
-  }, [formErrors, isSubmit]);
 
   const validate = (values) => {
     const errors = {};
@@ -82,33 +52,45 @@ const Register = () => {
         <div className="login__field">
           <label htmlFor="email">Email</label>
           <input
+            className={
+              !!formErrors.email ? "login__input error" : "login__input"
+            }
             name="email"
-            className="login__input"
             type="text"
             value={formValues.email}
             onChange={handleChange}
           />
-          <span className="login__error error1">{formErrors.email}</span>
+          {formErrors.email ? (
+            <span className="login__error">{formErrors.email}</span>
+          ) : null}
 
           <label htmlFor="password">Hasło</label>
           <input
+            className={
+              !!formErrors.password ? "login__input error" : "login__input"
+            }
             name="password"
-            className="login__input"
             type="password"
             value={formValues.password}
             onChange={handleChange}
           />
-          <span className="login__error error2">{formErrors.password}</span>
+          {formErrors.password ? (
+            <span className="login__error">{formErrors.password}</span>
+          ) : null}
 
           <label htmlFor="password2">Powtórz hasło</label>
           <input
+            className={
+              !!formErrors.password2 ? "login__input error" : "login__input"
+            }
             name="password2"
-            className="login__input"
             type="password"
             value={formValues.password2}
             onChange={handleChange}
           />
-          <span className="login__error error3">{formErrors.password2}</span>
+          {formErrors.password2 ? (
+            <span className="login__error">{formErrors.password2}</span>
+          ) : null}
         </div>
         <div className="login__btns">
           <Link to="/logowanie" className="login__btn">
