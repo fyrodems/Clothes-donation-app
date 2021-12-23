@@ -19,27 +19,6 @@ const Login = () => {
     setIsSubmit(true);
   };
 
-  // useEffect(() => {
-  //   if (formErrors.email) {
-  //     document
-  //       .querySelector(".error1")
-  //       .previousElementSibling.classList.add("error");
-  //   } else if (!formErrors.email) {
-  //     document
-  //       .querySelector(".error1")
-  //       .previousElementSibling.classList.remove("error");
-  //   }
-  //   if (formErrors.password) {
-  //     document
-  //       .querySelector(".error2")
-  //       .previousElementSibling.classList.add("error");
-  //   } else if (!formErrors.password) {
-  //     document
-  //       .querySelector(".error2")
-  //       .previousElementSibling.classList.remove("error");
-  //   }
-  // }, [formErrors, isSubmit]);
-
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
