@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Title from "../../common/Title";
 import fb from "../../../assets/Facebook.svg";
 import ig from "../../../assets/Instagram.svg";
@@ -7,7 +7,6 @@ const HomeContact = () => {
   const initialValues = { name: "", email: "", message: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,38 +16,7 @@ const HomeContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
   };
-
-  useEffect(() => {
-    if (formErrors.name) {
-      document
-        .querySelector(".error1")
-        .previousElementSibling.classList.add("error");
-    } else if (!formErrors.name) {
-      document
-        .querySelector(".error1")
-        .previousElementSibling.classList.remove("error");
-    }
-    if (formErrors.email) {
-      document
-        .querySelector(".error2")
-        .previousElementSibling.classList.add("error");
-    } else if (!formErrors.email) {
-      document
-        .querySelector(".error2")
-        .previousElementSibling.classList.remove("error");
-    }
-    if (formErrors.message) {
-      document
-        .querySelector(".error3")
-        .previousElementSibling.classList.add("error");
-    } else if (!formErrors.message) {
-      document
-        .querySelector(".error3")
-        .previousElementSibling.classList.remove("error");
-    }
-  }, [formErrors, isSubmit]);
 
   const validate = (values) => {
     const errors = {};
@@ -94,7 +62,7 @@ const HomeContact = () => {
 
   return (
     <section id="contact" className="contact">
-      {JSON.stringify(formValues)}
+      {/*{JSON.stringify(formValues)}*/}
       <div className="contact__form">
         <form onSubmit={handleSubmit}>
           <Title title="Skontaktuj się z nami" />
@@ -102,6 +70,7 @@ const HomeContact = () => {
             <div className="form__field">
               <label htmlFor="name">Wpisz swoje imię</label>
               <input
+                className={!!formErrors.name ? "error" : ""}
                 type="text"
                 id="name"
                 name="name"
@@ -109,11 +78,15 @@ const HomeContact = () => {
                 value={formValues.name}
                 onChange={handleChange}
               />
-              <span className="contact__error error1">{formErrors.name}</span>
+              {formErrors.name ? (
+                <span className="contact__error">{formErrors.name}</span>
+              ) : null}
             </div>
+
             <div className="form__field">
               <label htmlFor="email">Wpisz swój email</label>
               <input
+                className={!!formErrors.email ? "error" : ""}
                 type="text"
                 id="email"
                 name="email"
@@ -121,12 +94,15 @@ const HomeContact = () => {
                 value={formValues.email}
                 onChange={handleChange}
               />
-              <span className="contact__error error2">{formErrors.email}</span>
+              {formErrors.email ? (
+                <span className="contact__error">{formErrors.email}</span>
+              ) : null}
             </div>
           </div>
           <div className="textarea__container">
             <label htmlFor="message">Wpisz swoją wiadomość</label>
             <textarea
+              className={!!formErrors.message ? "error" : ""}
               rows="4"
               id="message"
               name="message"
@@ -134,9 +110,12 @@ const HomeContact = () => {
               onChange={handleChange}
               placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat."
             />
-            <span className="contact__error error3">{formErrors.message}</span>
+            {formErrors.message ? (
+              <span className="contact__error">{formErrors.message}</span>
+            ) : null}
           </div>
           <button className="button">Wyślij</button>
         </form>
